@@ -1,0 +1,202 @@
+###########################################################################
+######################## Containers Customization #########################
+###########################################################################
+
+### General ###############################################################
+APP_PATH=/var/www
+APP_PORT=8080
+APP_HOST=stage.sdlc.cenports.net
+
+### Network ###############################################################
+NETWORK_MODE=bridge
+NETWORK_RANGE=172.26.1.0/24
+
+### Nginx #################################################################
+NGINX_VERSION=latest
+NGINX_PORT=80
+NGINX_IP=172.26.1.199
+NGINX_HOSTNAME=pgdash.test
+
+### Directories (Prod) ####################################################
+AWS_S3_BUCKET_STATIC=static.cenports.com
+AWS_S3_DATA_DIR_STATIC=/mnt/data/s3fs-static
+AWS_S3_BUCKET_IMAGE=images-na.cenports.com
+AWS_S3_DATA_DIR_IMAGE=/mnt/data/s3fs-image
+AWS_S3_ACCESS_KEY_ID=
+AWS_S3_SECRET_ACCESS_KEY=
+AWS_S3FS_ARGS=allow_other,umask=022,url=http://s3.amazonaws.com,use_path_request_style
+
+### MySQL #################################################################
+MYSQL_VERSION=5.7
+MYSQL_VOLUME=/opt/data/mysql
+MYSQL_PORT=33061
+MYSQL_ROOT_PASSWORD=u7x!z%C*F-JaNdRgUkXp2s5v8y/B?D
+MYSQL_LOGGING=/opt/log/mysql
+
+### Memcached #############################################################
+MEMCACHED_VERSION=1.6-alpine
+MEMCACHED_PORT=11211
+
+### Mailhog ###############################################################
+MAILHOG_WEB_PORT=8025
+MAILHOG_SMTP_PORT=1025
+
+################# Cenports Dashboard Environment Variables ################
+## !This should be the only place that stores any sensitive credentials! ##
+## !Use getenv() function to retrieve info from here withoout hardcoding ##
+## !Please update .env.example after you made any changes on .env file!  ##
+###########################################################################
+
+# Define environment: local, development, testing, production (* Required)
+APP_ENV=testing
+
+# APP encryption key (* DO NOT CHANGE)
+# A 128-bit key is required for using session.
+# CLI: openssl enc -aes-128-cbc -k secret -P -md sha1
+APP_KEY=I6PnEPbQNLslYMj7ChKxDJ2yenuHLkXn
+
+# Define APP URL (Leave blank if not specified. Required backslash if present)
+APP_URL=
+
+# Define APP name
+APP_NAME="Cenports"
+
+# Define APP version (* Required)
+APP_VERSION=v0.9.x
+
+# Define APP Locale (Default)
+APP_LANG=english
+APP_CHARASET=UTF-8
+
+# Debug (Display Error Message) / Testing Mode (Profiler)
+APP_DEBUG=TRUE
+APP_PROFILER_ENABLE=FALSE
+
+LOG_PATH=application/logs/
+LOG_STDOUT=TRUE
+LOG_THRESHOLD=1
+
+# Database Configuration (Default) (*)
+DEFAULT_DB_CONNECTION=mysqli
+DEFAULT_DB_HOSTNAME=dev-stage-dashboard-081022.cbk6slmr1tdl.us-west-2.rds.amazonaws.com
+DEFAULT_DB_DATABASE=pgdash
+DEFAULT_DB_USERNAME=shrimpboy
+DEFAULT_DB_PASSWORD=jailtim3123
+DEFAULT_DB_PORT=33069
+DEFAULT_DB_DEBUG=TRUE
+
+# APP Miscellaneous
+COMPRESSION_ENABLE=FALSE
+LOGGER_RECURSIVE_SORT=TRUE
+
+# Maintenance Window (Optional)
+MAINTENANCE_ENABLE=FALSE
+MAINTENANCE_DATE="March 15th, 2018"
+MAINTENANCE_START="23:00:00"
+MAINTENANCE_END="01:00:00"
+
+# Whitelabeling
+WHITELABEL_ENABLE=FALSE
+WHITELABEL_NAME=
+WHITELABEL_COPYRIGHT=
+WHITELABEL_URL=
+WHITELABEL_LOGO=
+WHITELABEL_FAVICON=
+WHITELABEL_HEADER=
+
+# Mail Configuration
+MAIL_PROTOCOL=smtp
+MAIL_HOST=mailhog
+MAIL_PORT=1025
+MAIL_USER=
+MAIL_PASS=
+MAIL_SECURE=
+MAIL_FROM_ADDRESS=
+MAIL_FROM_NOREPLY_ADDRESS=
+MAIL_FROM_NAME="Cenports"
+MAIL_RECEIVE_TEST=xxx@cenports.com
+MAIL_TEST_ENV=FALSE
+EXCEPTION_EMAIL_ADDRESS=system_errors@cenports.com
+
+# CDN Configuration
+CDN_URL=
+
+# Define Amazon S3 Storage and Cloudfront URL
+AWS_KEY=AKIAJ6TZG3WSFI4PRUHA
+AWS_SECRET=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
+AWS_REGION=us-east-1
+AWS_BUCKET=static.cenports.com
+AWS_CLOUDFRONT_URL=https://static.cenports.com
+AWS_SSL_SECURE=FALSE
+
+# Third Party API Access Token
+
+## CENPORTS API ACCESS
+OAUTH_CLIENT_ID=f757ae90-f397-4b2e-82d6-e5b975d0c375
+OAUTH_CLIENT_SECRET=CEgwSJ99efeQWhdWn4kGwMGuG3GnZdQy5gFHlgqtc
+OAUTH_ENDPOINT=https://sso.auth.cenports.io/v2/authorize
+
+## Stripe Integrations
+STRIPE_API_KEY=sk_live_DZRAem2GztyOgz1RYtbV2UuI
+
+## eBay Integrations
+### Get the keys here https://developer.ebay.com/my/keys
+EBAY_APP_ID=Cenports-Cenports-PRD-1a6d4ee64-f873882f
+EBAY_DEV_ID=14dae4f8-a8f7-4275-915a-a719ebe1824c
+EBAY_CERT_ID=PRD-a6d4ee64959f-a543-4efa-9ad8-294e
+EBAY_RUNAME=Cenports_Commer-Cenports-Cenpor-qchuhh
+### Set redirect urls here https://developer.ebay.com/my/auth?env=sandbox&index=0
+EBAY_SANDBOX_ENABLE=FALSE
+
+## Shopify Integrations
+SHOPIFY_DEV_URL=https://233fa7aa.ngrok.io/portgenius-dashboard
+SHOPIFY_CLIENT_ID=583e0b59bdb9d9ea7d6ec5456df32d78
+SHOPIFY_CLIENT_KEY=04aa9240d164f6c3d6a042c696904547
+
+## WooCommerce Integrations
+WooC_APPNAME="Cenports DEV"
+
+## Wish Integrations
+WISH_ENVIRONMENT=prod
+
+## CACHE
+### MEMCACHED Configuration
+MEMCACHED_HOST=127.0.0.1
+MEMCACHED_PORT=11211
+MEMCACHED_WEIGHT=1
+MEMCACHED_EXPIRE=3600
+
+## etsy Integrations
+ETSY_SECRET=twl6jaaxmk
+ETSY_KEYSTRING=8vl8lvgeqicgkwwlpr0kt6b8
+
+## WALMART Configuration
+WM_SERVICE_NAME="Cenports Walmart"
+
+## AMAZON Configuration
+APP_NAME="Cenports"
+AMAZON_MWS_ACCESS_KEY_ID=AKIAJBAWUFQPMNDLXWCA
+AMAZON_MWS_SECRET_ACCESS_KEY=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
+
+#CAPTURE
+LOGROCKET_ENABLE=FALSE
+LOGROCKET_APP_ID=hi2qsv/cenports-dashboard
+LOGROCKET_API_KEY=hi2qsv:cenports-dashboard:RgaxrDpE5jYEEkhk83Qt
+
+#CHAT BOX
+INTERCOM_ENABLE=FALSE
+INTERCOM_APP_ID=fjedleyj
+#identity verification
+INTERCOM_SECRET_KEY=Rek0B7CMI8PfPPDsHm5YtSrh1NfJwTvu2FPYcEPe
+
+RETURN_OAUTH_ENDPOINT=https://stage-apis.sdlc.cenports.net/authorize
+RETURN_ENDPOINT_URL=https://stage-apis.sdlc.cenports.net
+
+# Integrations endpoint
+INTEGRATIONS_ENDPOINT=https://cis.cenports.io/
+# Cenports API
+CENPORTS_API_GRANT_TYPE="client_credentials"
+CENPORTS_API_CLIENT_ID="a70fa5b2-0f17-4de1-97a8-38eb3d8eeb4e"
+CENPORTS_API_CLIENT_SECRET="RCH9fbJtu8vIB8zSeFnY9NcncQ9PjoQ9UHqegfpb"
+CENPORTS_API_PARTNER_ID="GYBER"
+CENPORTS_API_ENDPOINT=http://cp_apiv2.en-an.cn/

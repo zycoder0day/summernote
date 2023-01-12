@@ -1,0 +1,28 @@
+COMPANY_WEBSITE='https://duocphamamerican.com'
+COMPANY_NAME='CÔNG TY TNHH ĐẦU TƯ & THƯƠNG MẠI DƯỢC PHẨM AMERICAN'
+COMPANY_EMAIL='info.americanpharma@gmail.com'
+COMPANY_PHONE='0975.067.338'
+COMPANY_ADDRESS='C5- Khu A, Tập thể Học Viện Quân Y, Phường Phúc La, Quận Hà Đông, Thành phố Hà Nội, Việt Nam.'
+COMPANY_FACEBOOK='https://www.facebook.com/duocphamamerican/'
+
+DB_DATABASE=ngaynet_duocphamamerica
+DB_USERNAME=ngaynet_duocphamamerica
+DB_PASSWORD=3+}FeK.@CN5s
+
+APP_KEY=base64:pbM4RoLKDzkBs+/PCd0p9i7qNBjJujhT1Nxav+pqB1U=
+APP_ENV=development
+APP_DEBUG=true
+QUERY_LOG=false
+CACHE_DRIVER=file
+PRODUCT_MULTI_IMAGE=true
+CUSTOM_GOOGLE=true
+CUSTOM_FACEBOOK=true
+PRODUCT_RELATED=10
+PAGING_PERPAGE=20
+
+IHAPPY_MAIL_SERVICE=true
+SYSTEM_EMAIL_HOST=mail.ihappy.info
+SYSTEM_EMAIL_PORT=465
+SYSTEM_EMAIL=noreply@ihappy.info
+SYSTEM_EMAIL_NAME='iHappyCMS Email Service'
+SYSTEM_EMAIL_PASSWORD='j9!g)OCg2e@m'
